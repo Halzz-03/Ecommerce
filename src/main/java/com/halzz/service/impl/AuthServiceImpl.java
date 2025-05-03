@@ -74,16 +74,25 @@ public class AuthServiceImpl implements AuthService {
         verificationCode.setEmail(email);
         verificationCodeRepository.save(verificationCode);
 
-        String subject = "Your Cartify One-Time Password (OTP) for Secure Login/Signup";
+        String subject = "Your Cartify OTP for Secure Login/Signup";
 
-        String text = "Hi,\n\n"
-                + "Thank you for choosing Cartify!\n\n"
-                + "Your One-Time Password (OTP) for login/signup is:\n\n"
-                + "🔐 OTP: " + otp + "\n\n"
-                + "⚠️ For your security, do not share this OTP with anyone.\n\n"
+        String text = "<!DOCTYPE html>" +
+                "<html>" +
+                "<body style='font-family: Arial, sans-serif; color: #333;'>" +
+                "  <div style='max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 8px;'>" +
+                "    <h2 style='color: #4CAF50;'>Cartify</h2>" +
+                "    <p>Hi,</p>" +
+                "    <p>Thank you for choosing <strong>Cartify</strong>!</p>" +
+                "    <p>Your One-Time Password (OTP) for login/signup is:</p>" +
+                "    <div style='font-size: 20px; font-weight: bold; padding: 10px 0;'> OTP: <span style='color: #4CAF50;'>" + otp + "</span></div>" +
+                "    <p style='color: #e53935;'> For your security, do not share this OTP with anyone.</p>" +
+                "    <br>" +
+                "    <p>Thank you,</p>" +
+                "    <p>Team Cartify</p>" +
+                "  </div>" +
+                "</body>" +
+                "</html>";
 
-                + "Thank you,\n"
-                + "Team Cartify";
 
         emailService.sendVerificationOtpEmail(email, otp, subject, text);
     }
