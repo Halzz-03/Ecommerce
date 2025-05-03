@@ -37,13 +37,11 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 const accountStatuses = [
-    { status: 'ACTIVE', title: 'Active', description: 'Account is active and in good standing' },
-
-    { status: 'PENDING_VERIFICATION', title: 'Pending Verification', description: 'Account is created but not yet verified' },
-    { status: 'SUSPENDED', title: 'Suspended', description: 'Account is temporarily suspended, possibly due to violations' },
-    { status: 'DEACTIVATED', title: 'Deactivated', description: 'Account is deactivated, user may have chosen to deactivate it' },
-    { status: 'BANNED', title: 'Banned', description: 'Account is permanently banned due to severe violations' },
-    { status: 'CLOSED', title: 'Closed', description: 'Account is permanently closed, possibly at user request' }
+    { status: 'ACTIVE', title: 'Active', description: 'Coupon is active and can be used' },
+    { status: 'EXPIRED', title: 'Expired', description: 'Coupon has expired and can no longer be used' },
+    { status: 'PENDING', title: 'Pending', description: 'Coupon is pending approval' },
+    { status: 'SUSPENDED', title: 'Suspended', description: 'Coupon is temporarily suspended, possibly due to issues' },
+    { status: 'DEACTIVATED', title: 'Deactivated', description: 'Coupon is deactivated and cannot be used' },
 ];
 
 

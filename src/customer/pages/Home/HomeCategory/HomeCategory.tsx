@@ -4,7 +4,7 @@ import { useAppSelector } from '../../../../Redux Toolkit/Store';
 
 const homeCategory=[
   {
-    "name": "Home Décor",
+    "name": "Home Decor",
     "categoryId": "home_decor",
     "parentCategoryName": "Furniture",
     "parentCategoryId": "furniture",
@@ -66,7 +66,7 @@ const homeCategory=[
       image:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/28024048/2024/3/5/fca98389-f9d6-4f19-b82a-53c7ee0518ec1709633175836CORSICABlockSandalswithBows1.jpg"
     },
     {
-        "name": "Topwere",
+        "name": "Topwear",
         "categoryId": "men_topwear",
         "parentCategoryId":"men",
         "level":2,
@@ -74,7 +74,7 @@ const homeCategory=[
         image:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/23029834/2023/9/18/96c015ae-1090-4036-954b-d9c80085b1d71695022844653-HRX-by-Hrithik-Roshan-Men-Jackets-6981695022843934-1.jpg"
     },
     {
-        "name": "Bottomwere",
+        "name": "Bottomwear",
         "categoryId": "men_bottomwear",
         "parentCategoryId":"men",
         "level":2,
@@ -82,7 +82,7 @@ const homeCategory=[
         image:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/20122324/2022/9/22/91c61c45-fe17-4d1d-8e20-0aaaf90186b61663827920015RaymondSlimFitBlueJeansForMen1.jpg"
     },
     {
-        "name": "Innerwere And Sleepwere",
+        "name": "Innerwear And Sleepwear",
         "categoryId": "men_innerwear_and_sleepwear",
         "parentCategoryId":"men",
         "level":2,
@@ -90,7 +90,7 @@ const homeCategory=[
         image:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/24528350/2023/8/17/d9ee03c9-7e15-49e4-8f15-0b6f38e568121692275415567TrackPants1.jpg"
     },
     {
-        "name": "Footwere",
+        "name": "Footwear",
         "categoryId": "men_footwear",
         "parentCategoryId":"men",
         "level":2,

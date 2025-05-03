@@ -9,35 +9,47 @@ import {
   Collapse,
   Chip,
   Box,
-  Fade
+  Fade,
+  Typography,
+  Paper,
+  IconButton,
+  Tooltip,
+  Badge
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { brands } from "../../../data/Filter/brand";
 import { teal } from "@mui/material/colors";
 import { colors } from "../../../data/Filter/color";
 import { price } from "../../../data/Filter/price";
 import { discount } from "../../../data/Filter/discount";
 import { useSearchParams } from "react-router-dom";
-import { motion } from "framer-motion";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import ClearAllIcon from "@mui/icons-material/ClearAll";
+import ColorLensIcon from "@mui/icons-material/ColorLens";
+import PriceCheckIcon from "@mui/icons-material/PriceCheck";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 
 const FilterSection = () => {
-  const [expendColor, setExpendColor] = useState(false);
-  const [expendBrand, setExpendBrand] = useState(false);
+  const [expandColor, setExpandColor] = useState(false);
+  const [expandBrand, setExpandBrand] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [activeFilters, setActiveFilters] = useState(0);
 
-  const handleExpendBrand = () => {
-    setExpendBrand(!expendBrand);
+  useEffect(() => {
+    setActiveFilters(searchParams.size);
+  }, [searchParams]);
+
+  const handleExpandBrand = () => {
+    setExpandBrand(!expandBrand);
   };
   
-  const handleExpendColor = () => {
-    setExpendColor(!expendColor);
+  const handleExpandColor = () => {
+    setExpandColor(!expandColor);
   };
 
-  const updateFilterParams = (e: any) => {
+  const updateFilterParams = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = e.target;
     if (value) {
       searchParams.set(name, value);
@@ -48,79 +60,101 @@ const FilterSection = () => {
   };
 
   const clearAllFilters = () => {
-    console.log("clearAllFilters", searchParams);
-    searchParams.forEach((value: any, key: any) => {
+    searchParams.forEach((value: string, key: string) => {
       searchParams.delete(key);
     });
     setSearchParams(searchParams);
   };
+
+  const handleChipClick = (name: string, value: string | number) => {
+    const fakeEvent = { 
+      target: { 
+        name: name, 
+        value: String(value) 
+      }
+    } as React.ChangeEvent<HTMLInputElement>;
+    
+    updateFilterParams(fakeEvent);
+  };
   
-  // Animation variants for filter sections
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }
+  const isFilterActive = (name: string, value: string | number): boolean => {
+    const paramValue = searchParams.get(name);
+    return paramValue === String(value);
   };
 
   return (
-    <Box 
-      className="bg-white rounded-lg shadow-md overflow-hidden"
+    <Paper
+      elevation={2}
+      className="overflow-hidden bg-white rounded-xl"
       sx={{
         transition: "all 0.3s ease",
         "&:hover": {
-          boxShadow: "0 8px 16px rgba(0, 70, 70, 0.1)"
+          boxShadow: "0 8px 24px rgba(0, 128, 128, 0.12)"
         }
       }}
     >
       <Fade in={true} timeout={600}>
         <div>
-          <div className="flex items-center justify-between h-[60px] px-6 bg-gradient-to-r from-teal-500 to-teal-600">
+          {/* Header */}
+          <div className="flex items-center justify-between px-5 py-4 bg-gradient-to-r from-teal-600 to-teal-500">
             <div className="flex items-center gap-2">
               <FilterAltIcon sx={{ color: "white" }} />
-              <p className="text-xl font-bold text-white">Filters</p>
+              <Typography variant="h6" sx={{ color: "white", fontWeight: 600 }}>
+                Filters
+              </Typography>
             </div>
-            <Button
-              onClick={clearAllFilters}
-              startIcon={<ClearAllIcon />}
-              variant="contained"
-              size="small"
-              sx={{
-                backgroundColor: "rgba(255, 255, 255, 0.2)",
-                color: "white",
-                fontWeight: 600,
-                "&:hover": {
-                  backgroundColor: "rgba(255, 255, 255, 0.3)"
-                },
-                textTransform: "none",
-                borderRadius: "20px",
-                boxShadow: "none"
+            
+            <Badge 
+              badgeContent={activeFilters} 
+              color="error"
+              sx={{ 
+                '& .MuiBadge-badge': { 
+                  backgroundColor: activeFilters > 0 ? '#ff5252' : 'transparent',
+                  border: activeFilters > 0 ? '2px solid white' : 'none'
+                }
               }}
             >
-              Clear All
-            </Button>
-          </div>
-          
-          <div className="px-6 py-4 space-y-4">
-            <motion.section 
-              initial="hidden"
-              animate="visible"
-              variants={sectionVariants}
-              className="filter-section"
-            >
-              <div className="filter-header flex justify-between items-center mb-3">
-                <FormLabel
+              <Tooltip title="Clear all filters">
+                <IconButton
+                  onClick={clearAllFilters}
+                  size="small"
                   sx={{
-                    fontSize: "16px",
-                    fontWeight: "bold",
-                    color: teal[700],
-                    margin: 0
+                    backgroundColor: "rgba(255, 255, 255, 0.2)",
+                    color: "white",
+                    "&:hover": {
+                      backgroundColor: "rgba(255, 255, 255, 0.3)"
+                    },
+                    transition: "all 0.2s ease"
                   }}
                 >
-                  Color
-                </FormLabel>
+                  <ClearAllIcon fontSize="small" />
+                </IconButton>
+              </Tooltip>
+            </Badge>
+          </div>
+          
+          {/* Filter Content */}
+          <div className="px-5 py-4 space-y-6">
+            {/* Color Filter */}
+            <div className="filter-section">
+              <div className="filter-header flex justify-between items-center mb-3">
+                <div className="flex items-center gap-2">
+                  <ColorLensIcon sx={{ color: teal[600], fontSize: 20 }} />
+                  <Typography
+                    variant="subtitle1"
+                    sx={{
+                      fontWeight: 600,
+                      color: teal[700]
+                    }}
+                  >
+                    Color
+                  </Typography>
+                </div>
+                
                 <Button
-                  onClick={handleExpendColor}
+                  onClick={handleExpandColor}
                   size="small"
-                  endIcon={expendColor ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                  endIcon={expandColor ? <ExpandLessIcon /> : <ExpandMoreIcon />}
                   sx={{
                     color: teal[600],
                     textTransform: "none",
@@ -129,93 +163,81 @@ const FilterSection = () => {
                     minWidth: "auto"
                   }}
                 >
-                  {expendColor ? "Less" : "More"}
+                  {expandColor ? "Less" : "More"}
                 </Button>
               </div>
               
               <FormControl sx={{ width: "100%" }}>
                 <Collapse in={true}>
-                  <RadioGroup
-                    onChange={updateFilterParams}
-                    aria-labelledby="color"
-                    defaultValue=""
-                    name="color"
-                    sx={{ display: "flex", flexDirection: "column", gap: 1 }}
-                  >
+                  <div className="grid grid-cols-2 gap-2">
                     {colors
-                      .slice(0, expendColor ? colors.length : 5)
-                      .map((item, index) => (
-                        <FormControlLabel
+                      .slice(0, expandColor ? colors.length : 5)
+                      .map((item) => (
+                        <div
                           key={item.name}
-                          value={item.name}
-                          control={
-                            <Radio 
-                              size="small" 
-                              sx={{
-                                color: teal[300],
-                                '&.Mui-checked': {
-                                  color: teal[600],
-                                },
-                              }}
-                            />
-                          }
-                          label={
-                            <div className="flex items-center gap-3">
-                              <span
-                                style={{ backgroundColor: item.hex }}
-                                className="h-5 w-5 rounded-full border shadow-sm transition-all duration-200 hover:scale-110"
-                              />
-                              <p className="text-gray-700 font-medium text-sm">{item.name}</p>
-                            </div>
-                          }
-                          sx={{
-                            mx: 0,
-                            my: 0.5,
-                            transition: "all 0.2s ease",
-                            "&:hover": {
-                              backgroundColor: "rgba(0, 150, 136, 0.04)",
-                              borderRadius: "4px"
-                            }
-                          }}
-                        />
+                          onClick={() => handleChipClick("color", item.name)}
+                          className={`flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-all duration-200 ${
+                            isFilterActive("color", item.name)
+                              ? "bg-teal-100 border border-teal-300"
+                              : "hover:bg-gray-50 border border-transparent"
+                          }`}
+                        >
+                          <span
+                            style={{ backgroundColor: item.hex }}
+                            className={`h-4 w-4 rounded-full shadow-sm ${
+                              isFilterActive("color", item.name)
+                                ? "ring-2 ring-teal-400"
+                                : ""
+                            }`}
+                          />
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              color: isFilterActive("color", item.name)
+                                ? teal[700]
+                                : "text.secondary",
+                              fontWeight: isFilterActive("color", item.name)
+                                ? 600
+                                : 400
+                            }}
+                          >
+                            {item.name}
+                          </Typography>
+                        </div>
                       ))}
-                  </RadioGroup>
+                  </div>
                 </Collapse>
               </FormControl>
-            </motion.section>
+            </div>
             
             <Divider sx={{ backgroundColor: teal[50] }} />
             
-            <motion.section 
-              initial="hidden"
-              animate="visible"
-              variants={sectionVariants}
-              className="filter-section"
-            >
-              <div className="filter-header mb-3">
-                <FormLabel
+            {/* Price Range Filter */}
+            <div className="filter-section">
+              <div className="filter-header mb-3 flex items-center gap-2">
+                <PriceCheckIcon sx={{ color: teal[600], fontSize: 20 }} />
+                <Typography
+                  variant="subtitle1"
                   sx={{
-                    fontSize: "16px",
-                    fontWeight: "bold",
-                    color: teal[700],
-                    margin: 0
+                    fontWeight: 600,
+                    color: teal[700]
                   }}
                 >
                   Price Range
-                </FormLabel>
+                </Typography>
               </div>
               
               <FormControl sx={{ width: "100%" }}>
                 <RadioGroup
                   name="price"
                   onChange={updateFilterParams}
-                  aria-labelledby="price"
-                  defaultValue=""
+                  value={searchParams.get("price") || ""}
+                  aria-labelledby="price-range"
                   sx={{ display: "flex", flexDirection: "column", gap: 1 }}
                 >
-                  {price.map((item, index) => (
+                  {price.map((item) => (
                     <FormControlLabel
-                      key={item.name}
+                      key={item.value}
                       value={item.value}
                       control={
                         <Radio 
@@ -229,101 +251,142 @@ const FilterSection = () => {
                         />
                       }
                       label={
-                        <span className="text-gray-700 font-medium text-sm">{item.name}</span>
+                        <Box 
+                          sx={{ 
+                            display: 'flex', 
+                            justifyContent: 'space-between', 
+                            width: '100%', 
+                            alignItems: 'center'
+                          }}
+                        >
+                          <Typography 
+                            variant="body2" 
+                            sx={{ 
+                              color: isFilterActive("price", item.value) ? teal[700] : 'text.secondary',
+                              fontWeight: isFilterActive("price", item.value) ? 600 : 400
+                            }}
+                          >
+                            {item.name}
+                          </Typography>
+                          
+                          {isFilterActive("price", item.value) && (
+                            <Chip 
+                              label="Active" 
+                              size="small"
+                              sx={{ 
+                                height: '18px',
+                                fontSize: '0.625rem',
+                                backgroundColor: teal[100],
+                                color: teal[700],
+                                fontWeight: 600
+                              }}
+                            />
+                          )}
+                        </Box>
                       }
                       sx={{
                         mx: 0,
                         my: 0.5,
                         transition: "all 0.2s ease",
+                        borderRadius: "4px",
+                        padding: '2px 4px',
                         "&:hover": {
-                          backgroundColor: "rgba(0, 150, 136, 0.04)",
-                          borderRadius: "4px"
-                        }
+                          backgroundColor: "rgba(0, 150, 136, 0.04)"
+                        },
+                        backgroundColor: isFilterActive("price", item.value) 
+                          ? "rgba(0, 150, 136, 0.08)" 
+                          : "transparent"
                       }}
                     />
                   ))}
                 </RadioGroup>
               </FormControl>
-            </motion.section>
+            </div>
             
             <Divider sx={{ backgroundColor: teal[50] }} />
             
-            <motion.section 
-              initial="hidden"
-              animate="visible"
-              variants={sectionVariants}
-              className="filter-section"
-            >
-              <div className="filter-header mb-3">
-                <FormLabel
+            {/* Discount Filter */}
+            <div className="filter-section">
+              <div className="filter-header mb-3 flex items-center gap-2">
+                <LocalOfferIcon sx={{ color: teal[600], fontSize: 20 }} />
+                <Typography
+                  variant="subtitle1"
                   sx={{
-                    fontSize: "16px",
-                    fontWeight: "bold",
-                    color: teal[700],
-                    margin: 0
+                    fontWeight: 600,
+                    color: teal[700]
                   }}
                 >
                   Discount
-                </FormLabel>
+                </Typography>
               </div>
               
-              <FormControl sx={{ width: "100%" }}>
-                <RadioGroup
-                  name="discount"
-                  onChange={updateFilterParams}
-                  aria-labelledby="discount"
-                  defaultValue=""
-                  sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap", gap: 1 }}
-                >
-                  {discount.map((item, index) => (
-                    <Chip
-                      key={item.name}
-                      label={item.name}
-                      onClick={() => {
-                        const fakeEvent = { target: { name: "discount", value: item.value } };
-                        updateFilterParams(fakeEvent);
-                      }}
-                      sx={{
-                        borderRadius: "16px",
-                        backgroundColor: Number(searchParams.get("discount")) === item.value ? teal[500] : "rgba(0, 150, 136, 0.08)",
-                        color: Number(searchParams.get("discount")) === item.value ? "white" : teal[700],
-                        fontWeight: 500,
-                        fontSize: "0.8rem",
-                        transition: "all 0.2s ease",
-                        "&:hover": {
-                          backgroundColor: Number(searchParams.get("discount")) === item.value ? teal[600] : "rgba(0, 150, 136, 0.15)",
-                          transform: "translateY(-2px)",
-                          boxShadow: "0 2px 5px rgba(0, 150, 136, 0.2)"
-                        }
-                      }}
-                    />
-                  ))}
-                </RadioGroup>
-              </FormControl>
-            </motion.section>
+              <div className="flex flex-wrap gap-2">
+                {discount.map((item) => (
+                  <Chip
+                    key={item.name}
+                    label={item.name}
+                    onClick={() => handleChipClick("discount", item.value)}
+                    sx={{
+                      borderRadius: "16px",
+                      backgroundColor: isFilterActive("discount", item.value) 
+                        ? teal[500] 
+                        : "rgba(0, 150, 136, 0.08)",
+                      color: isFilterActive("discount", item.value) 
+                        ? "white" 
+                        : teal[700],
+                      fontWeight: isFilterActive("discount", item.value) ? 600 : 500,
+                      fontSize: "0.75rem",
+                      transition: "all 0.2s ease",
+                      border: `1px solid ${isFilterActive("discount", item.value) ? teal[500] : 'transparent'}`,
+                      "&:hover": {
+                        backgroundColor: isFilterActive("discount", item.value) 
+                          ? teal[600] 
+                          : "rgba(0, 150, 136, 0.15)",
+                        transform: "translateY(-2px)",
+                        boxShadow: "0 2px 5px rgba(0, 150, 136, 0.2)"
+                      }
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
             
-            <Box 
-              sx={{ 
-                mt: 3, 
-                display: "flex", 
-                justifyContent: "center" 
-              }}
-            >
-              <Chip
-                label={`${searchParams.size} filters applied`}
-                sx={{
-                  display: searchParams.size > 0 ? "flex" : "none",
-                  backgroundColor: teal[50],
-                  color: teal[700],
-                  fontWeight: "bold",
-                  fontSize: "0.75rem"
+            {/* Filter Summary */}
+            {activeFilters > 0 && (
+              <Box 
+                sx={{ 
+                  mt: 3, 
+                  display: "flex", 
+                  justifyContent: "center" 
                 }}
-              />
-            </Box>
+              >
+                <Fade in={true}>
+                  <Button
+                    variant="contained"
+                    size="small"
+                    onClick={clearAllFilters}
+                    startIcon={<ClearAllIcon />}
+                    sx={{
+                      backgroundColor: teal[500],
+                      color: 'white',
+                      fontWeight: 600,
+                      textTransform: 'none',
+                      borderRadius: '20px',
+                      boxShadow: '0 2px 6px rgba(0, 128, 128, 0.3)',
+                      '&:hover': {
+                        backgroundColor: teal[600],
+                      }
+                    }}
+                  >
+                    Clear {activeFilters} {activeFilters === 1 ? 'filter' : 'filters'}
+                  </Button>
+                </Fade>
+              </Box>
+            )}
           </div>
         </div>
       </Fade>
-    </Box>
+    </Paper>
   );
 };
 

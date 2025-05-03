@@ -20,13 +20,7 @@ export const electronicsLevelThree = [
     name: "Samsung Mobile",
     parentCategoryName: "Mobiles",
   },
-  {
-    parentCategoryId: "mobiles",
-    categoryId: "infinix_mobile",
-    level: 3,
-    name: "Infinix Mobile",
-    parentCategoryName: "Mobiles",
-  },
+ 
   {
     parentCategoryId: "mobiles",
     categoryId: "oppo_mobile",
@@ -55,34 +49,9 @@ export const electronicsLevelThree = [
     name: "Honor Mobile",
     parentCategoryName: "Mobiles",
   },
-  {
-    parentCategoryId: "mobiles",
-    categoryId: "asus_mobile",
-    level: 3,
-    name: "Asus Mobile",
-    parentCategoryName: "Mobiles",
-  },
-  {
-    parentCategoryId: "mobiles",
-    categoryId: "poco_x2_mobile",
-    level: 3,
-    name: "Poco X2 Mobile",
-    parentCategoryName: "Mobiles",
-  },
-  {
-    parentCategoryId: "mobiles",
-    categoryId: "realme_narzo_10_mobile",
-    level: 3,
-    name: "realme Narzo 10 Mobile",
-    parentCategoryName: "Mobiles",
-  },
-  {
-    parentCategoryId: "mobiles",
-    categoryId: "infinix_hot_9_mobile",
-    level: 3,
-    name: "Infinix Hot 9 Mobile",
-    parentCategoryName: "Mobiles",
-  },
+  
+ 
+  
   {
     parentCategoryId: "mobiles",
     categoryId: "iqoo_3_mobile",
@@ -111,13 +80,7 @@ export const electronicsLevelThree = [
     name: "realme Narzo 10A Mobile",
     parentCategoryName: "Mobiles",
   },
-  {
-    parentCategoryId: "mobiles",
-    categoryId: "motorola_g8_power_lite_mobile",
-    level: 3,
-    name: "Motorola g8 power lite Mobile",
-    parentCategoryName: "Mobiles",
-  },
+
 
   {
     parentCategoryId: "mobile_accessories",
@@ -154,27 +117,15 @@ export const electronicsLevelThree = [
     name: "Memory Cards",
     parentCategoryName: "Mobile Accessories",
   },
-  {
-    parentCategoryId: "mobile_accessories",
-    categoryId: "smart_headphones",
-    level: 3,
-    name: "Smart Headphones",
-    parentCategoryName: "Mobile Accessories",
-  },
+ 
   {
     parentCategoryId: "mobile_accessories",
     categoryId: "mobile_cables",
     level: 3,
-    name: "Mobile Cables",
+    name: "Charger Cables",
     parentCategoryName: "Mobile Accessories",
   },
-  {
-    parentCategoryId: "mobile_accessories",
-    categoryId: "mobile_chargers",
-    level: 3,
-    name: "Mobile Chargers",
-    parentCategoryName: "Mobile Accessories",
-  },
+ 
   {
     parentCategoryId: "mobile_accessories",
     categoryId: "mobile_holders",
@@ -190,13 +141,7 @@ export const electronicsLevelThree = [
     name: "Smart Watches",
     parentCategoryName: "Smart Wearable Tech",
   },
-  {
-    parentCategoryId: "smart_wearable_tech",
-    categoryId: "smart_glasses_vr",
-    level: 3,
-    name: "Smart Glasses (VR)",
-    parentCategoryName: "Smart Wearable Tech",
-  },
+ 
   {
     parentCategoryId: "smart_wearable_tech",
     categoryId: "smart_bands",
@@ -212,14 +157,7 @@ export const electronicsLevelThree = [
     name: "Bp Monitors",
     parentCategoryName: "Health Care Appliances",
   },
-  {
-    parentCategoryId: "health_care_appliances",
-    categoryId: "weighing_scale",
-    level: 3,
-    name: "Weighing Scale",
-    parentCategoryName: "Health Care Appliances",
-  },
-
+  
   {
     parentCategoryId: "laptops",
     categoryId: "gaming_laptops",
@@ -327,13 +265,7 @@ export const electronicsLevelThree = [
     name: "Home Theatres",
     parentCategoryName: "Speakers",
   },
-  {
-    parentCategoryId: "speakers",
-    categoryId: "soundbars",
-    level: 3,
-    name: "Soundbars",
-    parentCategoryName: "Speakers",
-  },
+  
   {
     parentCategoryId: "speakers",
     categoryId: "bluetooth_speakers",
@@ -341,13 +273,7 @@ export const electronicsLevelThree = [
     name: "Bluetooth Speakers",
     parentCategoryName: "Speakers",
   },
-  {
-    parentCategoryId: "speakers",
-    categoryId: "dth_set_top_box",
-    level: 3,
-    name: "DTH Set Top Box",
-    parentCategoryName: "Speakers",
-  },
+ 
 
   {
     parentCategoryId: "smart_home_automation",
@@ -364,20 +290,8 @@ export const electronicsLevelThree = [
     name: "DSLR & Mirrorless Camera",
     parentCategoryName: "Camera",
   },
-  {
-    parentCategoryId: "camera",
-    categoryId: "compact_bridge_cameras",
-    level: 3,
-    name: "Compact & Bridge Cameras",
-    parentCategoryName: "Camera",
-  },
-  {
-    parentCategoryId: "camera",
-    categoryId: "sports_action_camera",
-    level: 3,
-    name: "Sports & Action Camera",
-    parentCategoryName: "Camera",
-  },
+ 
+ 
   {
     parentCategoryId: "camera",
     categoryId: "camera_accessories",
@@ -399,71 +313,6 @@ export const electronicsLevelThree = [
     name: "Camera Tripods",
     parentCategoryName: "Camera",
   },
-
-  {
-    parentCategoryId: "network_components",
-    categoryId: "routers",
-    level: 3,
-    name: "Routers",
-    parentCategoryName: "Network Components",
-  },
-
-  {
-    parentCategoryId: "featured",
-    categoryId: "google_assistant_store",
-    level: 3,
-    name: "Google Assistant Store",
-    parentCategoryName: "Featured",
-  },
-  {
-    parentCategoryId: "featured",
-    categoryId: "laptops_on_buyback_guarantee",
-    level: 3,
-    name: "Laptops on Buyback Guarantee",
-    parentCategoryName: "Featured",
-  },
-  {
-    parentCategoryId: "featured",
-    categoryId: "flipkart_smartbuy",
-    level: 3,
-    name: "Flipkart SmartBuy",
-    parentCategoryName: "Featured",
-  },
-  {
-    parentCategoryId: "featured",
-    categoryId: "li_polymer_power_banks",
-    level: 3,
-    name: "Li-Polymer Power Banks",
-    parentCategoryName: "Featured",
-  },
-  {
-    parentCategoryId: "featured",
-    categoryId: "sony_ps4_pro_slim",
-    level: 3,
-    name: "Sony PS4 Pro & Slim",
-    parentCategoryName: "Featured",
-  },
-  {
-    parentCategoryId: "featured",
-    categoryId: "apple_products",
-    level: 3,
-    name: "Apple Products",
-    parentCategoryName: "Featured",
-  },
-  {
-    parentCategoryId: "featured",
-    categoryId: "microsoft_store",
-    level: 3,
-    name: "Microsoft Store",
-    parentCategoryName: "Featured",
-  },
-  {
-    parentCategoryId: "featured",
-    categoryId: "lenovo_phab_series",
-    level: 3,
-    name: "Lenovo Phab Series",
-    parentCategoryName: "Featured",
-  },
   {
     parentCategoryId: "featured",
     categoryId: "jbl_speakers",
@@ -471,25 +320,6 @@ export const electronicsLevelThree = [
     name: "JBL Speakers",
     parentCategoryName: "Featured",
   },
-  {
-    parentCategoryId: "featured",
-    categoryId: "smartphones_on_buyback_guarantee",
-    level: 3,
-    name: "Smartphones On Buyback Guarantee",
-    parentCategoryName: "Featured",
-  },
-  {
-    parentCategoryId: "featured",
-    categoryId: "philips",
-    level: 3,
-    name: "Philips",
-    parentCategoryName: "Featured",
-  },
-  {
-    parentCategoryId: "featured",
-    categoryId: "dr_morepen",
-    level: 3,
-    name: "Dr. Morepen",
-    parentCategoryName: "Featured",
-  },
+ 
+  
 ];

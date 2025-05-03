@@ -307,10 +307,19 @@ const ProductForm = () => {
                   <em>None</em>
                 </MenuItem>
                 <MenuItem value="FREE">FREE</MenuItem>
+                <MenuItem value="XS">XS</MenuItem>
                 <MenuItem value="S">S</MenuItem>
                 <MenuItem value="M">M</MenuItem>
                 <MenuItem value="L">L</MenuItem>
                 <MenuItem value="XL">XL</MenuItem>
+                <MenuItem value="5">5</MenuItem>
+                <MenuItem value="6">6</MenuItem>
+                <MenuItem value="7">7</MenuItem>
+                <MenuItem value="8">8</MenuItem>
+                <MenuItem value="9">9</MenuItem>
+                <MenuItem value="10">10</MenuItem>
+                <MenuItem value="N/A">N/A</MenuItem>
+               
               </Select>
               {formik.touched.sizes && formik.errors.sizes && (
                 <FormHelperText>{formik.errors.sizes}</FormHelperText>

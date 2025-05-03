@@ -21,13 +21,6 @@ export const furnitureLevelThree = [
     "level": 3
   },
   {
-    "name": "Bedding Sets",
-    "categoryId": "bedding_sets",
-    "parentCategoryName": "Bed Linen & Furnishing",
-    "parentCategoryId": "bed_linen_furnishing",
-    "level": 3
-  },
-  {
     "name": "Blankets, Quilts & Dohars",
     "categoryId": "blankets_quilts_dohars",
     "parentCategoryName": "Bed Linen & Furnishing",
@@ -49,38 +42,10 @@ export const furnitureLevelThree = [
     "level": 3
   },
   {
-    "name": "Diwan Sets",
-    "categoryId": "diwan_sets",
-    "parentCategoryName": "Bed Linen & Furnishing",
-    "parentCategoryId": "bed_linen_furnishing",
-    "level": 3
-  },
-  {
-    "name": "Chair Pads & Covers",
-    "categoryId": "chair_pads_covers",
-    "parentCategoryName": "Bed Linen & Furnishing",
-    "parentCategoryId": "bed_linen_furnishing",
-    "level": 3
-  },
-  {
     "name": "Sofa Covers",
     "categoryId": "sofa_covers",
     "parentCategoryName": "Bed Linen & Furnishing",
     "parentCategoryId": "bed_linen_furnishing",
-    "level": 3
-  },
-  {
-    "name": "Floor Runners",
-    "categoryId": "floor_runners",
-    "parentCategoryName": "Flooring",
-    "parentCategoryId": "flooring",
-    "level": 3
-  },
-  {
-    "name": "Carpets",
-    "categoryId": "carpets",
-    "parentCategoryName": "Flooring",
-    "parentCategoryId": "flooring",
     "level": 3
   },
   {
@@ -91,8 +56,8 @@ export const furnitureLevelThree = [
     "level": 3
   },
   {
-    "name": "Door Mats",
-    "categoryId": "door_mats",
+    "name": "Carpets",
+    "categoryId": "carpets",
     "parentCategoryName": "Flooring",
     "parentCategoryId": "flooring",
     "level": 3
@@ -112,41 +77,6 @@ export const furnitureLevelThree = [
     "level": 3
   },
   {
-    "name": "Beach Towels",
-    "categoryId": "beach_towels",
-    "parentCategoryName": "Bath",
-    "parentCategoryId": "bath",
-    "level": 3
-  },
-  {
-    "name": "Towels Set",
-    "categoryId": "towels_set",
-    "parentCategoryName": "Bath",
-    "parentCategoryId": "bath",
-    "level": 3
-  },
-  {
-    "name": "Bath Rugs",
-    "categoryId": "bath_rugs",
-    "parentCategoryName": "Bath",
-    "parentCategoryId": "bath",
-    "level": 3
-  },
-  {
-    "name": "Bath Robes",
-    "categoryId": "bath_robes",
-    "parentCategoryName": "Bath",
-    "parentCategoryId": "bath",
-    "level": 3
-  },
-  {
-    "name": "Bathroom Accessories",
-    "categoryId": "bathroom_accessories",
-    "parentCategoryName": "Bath",
-    "parentCategoryId": "bath",
-    "level": 3
-  },
-  {
     "name": "Shower Curtains",
     "categoryId": "shower_curtains",
     "parentCategoryName": "Bath",
@@ -161,22 +91,8 @@ export const furnitureLevelThree = [
     "level": 3
   },
   {
-    "name": "Ceiling Lamps",
-    "categoryId": "ceiling_lamps",
-    "parentCategoryName": "Lamps & Lighting",
-    "parentCategoryId": "lamps_lighting",
-    "level": 3
-  },
-  {
     "name": "Table Lamps",
     "categoryId": "table_lamps",
-    "parentCategoryName": "Lamps & Lighting",
-    "parentCategoryId": "lamps_lighting",
-    "level": 3
-  },
-  {
-    "name": "Wall Lamps",
-    "categoryId": "wall_lamps",
     "parentCategoryName": "Lamps & Lighting",
     "parentCategoryId": "lamps_lighting",
     "level": 3
@@ -186,20 +102,6 @@ export const furnitureLevelThree = [
     "categoryId": "outdoor_lamps",
     "parentCategoryName": "Lamps & Lighting",
     "parentCategoryId": "lamps_lighting",
-    "level": 3
-  },
-  {
-    "name": "String Lights",
-    "categoryId": "string_lights",
-    "parentCategoryName": "Lamps & Lighting",
-    "parentCategoryId": "lamps_lighting",
-    "level": 3
-  },
-  {
-    "name": "Plants & Planters",
-    "categoryId": "plants_planters",
-    "parentCategoryName": "Home Décor",
-    "parentCategoryId": "home_decor",
     "level": 3
   },
   {
@@ -231,29 +133,8 @@ export const furnitureLevelThree = [
     "level": 3
   },
   {
-    "name": "Festive Decor",
-    "categoryId": "festive_decor",
-    "parentCategoryName": "Home Décor",
-    "parentCategoryId": "home_decor",
-    "level": 3
-  },
-  {
-    "name": "Pooja Essentials",
-    "categoryId": "pooja_essentials",
-    "parentCategoryName": "Home Décor",
-    "parentCategoryId": "home_decor",
-    "level": 3
-  },
-  {
     "name": "Wall Shelves",
     "categoryId": "wall_shelves",
-    "parentCategoryName": "Home Décor",
-    "parentCategoryId": "home_decor",
-    "level": 3
-  },
-  {
-    "name": "Fountains",
-    "categoryId": "fountains",
     "parentCategoryName": "Home Décor",
     "parentCategoryId": "home_decor",
     "level": 3
@@ -308,13 +189,6 @@ export const furnitureLevelThree = [
     "level": 3
   },
   {
-    "name": "Cups and Mugs",
-    "categoryId": "cups_mugs",
-    "parentCategoryName": "Kitchen & Table",
-    "parentCategoryId": "kitchen_table",
-    "level": 3
-  },
-  {
     "name": "Bakeware & Cookware",
     "categoryId": "bakeware_cookware",
     "parentCategoryName": "Kitchen & Table",
@@ -334,48 +208,5 @@ export const furnitureLevelThree = [
     "parentCategoryName": "Kitchen & Table",
     "parentCategoryId": "kitchen_table",
     "level": 3
-  },
-  {
-    "name": "Table Covers & Furnishings",
-    "categoryId": "table_covers_furnishings",
-    "parentCategoryName": "Kitchen & Table",
-    "parentCategoryId": "kitchen_table",
-    "level": 3
-  },
-  {
-    "name": "Bins",
-    "categoryId": "bins",
-    "parentCategoryName": "Storage",
-    "parentCategoryId": "storage",
-    "level": 3
-  },
-  {
-    "name": "Hangers",
-    "categoryId": "hangers",
-    "parentCategoryName": "Storage",
-    "parentCategoryId": "storage",
-    "level": 3
-  },
-  {
-    "name": "Organisers",
-    "categoryId": "organisers",
-    "parentCategoryName": "Storage",
-    "parentCategoryId": "storage",
-    "level": 3
-  },
-  {
-    "name": "Hooks & Holders",
-    "categoryId": "hooks_holders",
-    "parentCategoryName": "Storage",
-    "parentCategoryId": "storage",
-    "level": 3
-  },
-  {
-    "name": "Laundry Bags",
-    "categoryId": "laundry_bags",
-    "parentCategoryName": "Storage",
-    "parentCategoryId": "storage",
-    "level": 3
-  },
-  
+  }
 ];

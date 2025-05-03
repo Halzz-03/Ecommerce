@@ -54,18 +54,18 @@ export const menLevelThree=[
       "parentCategoryName": "Topwear",
       "parentCategoryId": "men_topwear"
     },
-    {
-      "name": "Men Kurtas & Kurta Sets",
-      "categoryId": "men_kurtas_and_kurta_sets",
-      "parentCategoryName": "Topwear",
-      "parentCategoryId": "men_topwear"
-    },
-    {
-      "name": "Men Sherwanis",
-      "categoryId": "men_sherwanis",
-      "parentCategoryName": "Topwear",
-      "parentCategoryId": "men_topwear"
-    },
+    // {
+    //   "name": "Men Kurtas & Kurta Sets",
+    //   "categoryId": "men_kurtas_and_kurta_sets",
+    //   "parentCategoryName": "Topwear",
+    //   "parentCategoryId": "men_topwear"
+    // },
+    // {
+    //   "name": "Men Sherwanis",
+    //   "categoryId": "men_sherwanis",
+    //   "parentCategoryName": "Topwear",
+    //   "parentCategoryId": "men_topwear"
+    // },
   
     {
       "name": "Men Jeans",
@@ -74,17 +74,17 @@ export const menLevelThree=[
       "parentCategoryId": "men_bottomwear"
     },
     {
-      "name": "Men Casual Trousers",
+      "name": "Men Trousers",
       "categoryId": "men_casual_trousers",
       "parentCategoryName": "Bottomwear",
       "parentCategoryId": "men_bottomwear"
     },
-    {
-      "name": "Men Formal Trousers",
-      "categoryId": "men_formal_trousers",
-      "parentCategoryName": "Bottomwear",
-      "parentCategoryId": "men_bottomwear"
-    },
+    // {
+    //   "name": "Men Formal Trousers",
+    //   "categoryId": "men_formal_trousers",
+    //   "parentCategoryName": "Bottomwear",
+    //   "parentCategoryId": "men_bottomwear"
+    // },
     {
       "name": "Men Shorts",
       "categoryId": "men_shorts",
@@ -104,12 +104,12 @@ export const menLevelThree=[
       "parentCategoryName": "Innerwear & Sleepwear",
       "parentCategoryId": "men_innerwear_and_sleepwear"
     },
-    {
-      "name": "Men Vests",
-      "categoryId": "men_vests",
-      "parentCategoryName": "Innerwear & Sleepwear",
-      "parentCategoryId": "men_innerwear_and_sleepwear"
-    },
+    // {
+    //   "name": "Men Vests",
+    //   "categoryId": "men_vests",
+    //   "parentCategoryName": "Innerwear & Sleepwear",
+    //   "parentCategoryId": "men_innerwear_and_sleepwear"
+    // },
     {
       "name": "Men Sleepwear & Loungewear",
       "categoryId": "men_sleepwear_and_loungewear",
@@ -147,18 +147,18 @@ export const menLevelThree=[
       "parentCategoryName": "Footwear",
       "parentCategoryId": "men_footwear"
     },
-    {
-      "name": "Men Flip Flops",
-      "categoryId": "men_flip_flops",
-      "parentCategoryName": "Footwear",
-      "parentCategoryId": "men_footwear"
-    },
-    {
-      "name": "Men Socks",
-      "categoryId": "men_socks",
-      "parentCategoryName": "Footwear",
-      "parentCategoryId": "men_footwear"
-    },
+    // {
+    //   "name": "Men Flip Flops",
+    //   "categoryId": "men_flip_flops",
+    //   "parentCategoryName": "Footwear",
+    //   "parentCategoryId": "men_footwear"
+    // },
+    // {
+    //   "name": "Men Socks",
+    //   "categoryId": "men_socks",
+    //   "parentCategoryName": "Footwear",
+    //   "parentCategoryId": "men_footwear"
+    // },
     {
       "name": "Men Sunglasses & Frames",
       "categoryId": "men_sunglasses_and_frames",
@@ -177,36 +177,36 @@ export const menLevelThree=[
       "parentCategoryName": "Personal Care & Grooming",
       "parentCategoryId": "men_personal_care_and_grooming"
     },
-    {
-      "name": "Men Sports Sandals",
-      "categoryId": "men_sports_sandals",
-      "parentCategoryName": "Personal Care & Grooming",
-      "parentCategoryId": "men_personal_care_and_grooming"
-    },
-    {
-      "name": "Men Active T-Shirts",
-      "categoryId": "men_active_t_shirts",
-      "parentCategoryName": "Personal Care & Grooming",
-      "parentCategoryId": "men_personal_care_and_grooming"
-    },
-    {
-      "name": "Men Track Pants & Shorts",
-      "categoryId": "men_track_pants_and_shorts",
-      "parentCategoryName": "Personal Care & Grooming",
-      "parentCategoryId": "men_personal_care_and_grooming"
-    },
+    // {
+    //   "name": "Men Sports Sandals",
+    //   "categoryId": "men_sports_sandals",
+    //   "parentCategoryName": "Personal Care & Grooming",
+    //   "parentCategoryId": "men_personal_care_and_grooming"
+    // },
+    // {
+    //   "name": "Men Active T-Shirts",
+    //   "categoryId": "men_active_t_shirts",
+    //   "parentCategoryName": "Personal Care & Grooming",
+    //   "parentCategoryId": "men_personal_care_and_grooming"
+    // },
+    // {
+    //   "name": "Men Track Pants & Shorts",
+    //   "categoryId": "men_track_pants_and_shorts",
+    //   "parentCategoryName": "Personal Care & Grooming",
+    //   "parentCategoryId": "men_personal_care_and_grooming"
+    // },
     {
       "name": "Men Tracksuits",
       "categoryId": "men_tracksuits",
       "parentCategoryName": "Personal Care & Grooming",
       "parentCategoryId": "men_personal_care_and_grooming"
     },
-    {
-      "name": "Men Jackets & Sweatshirts",
-      "categoryId": "men_jackets_and_sweatshirts",
-      "parentCategoryName": "Personal Care & Grooming",
-      "parentCategoryId": "men_personal_care_and_grooming"
-    },
+    // {
+    //   "name": "Men Jackets & Sweatshirts",
+    //   "categoryId": "men_jackets_and_sweatshirts",
+    //   "parentCategoryName": "Personal Care & Grooming",
+    //   "parentCategoryId": "men_personal_care_and_grooming"
+    // },
     {
       "name": "Men Sports Accessories",
       "categoryId": "men_sports_accessories",
@@ -237,12 +237,12 @@ export const menLevelThree=[
       "parentCategoryName": "Gadgets",
       "parentCategoryId": "men_gadgets"
     },
-    {
-      "name": "Men Speakers",
-      "categoryId": "men_speakers",
-      "parentCategoryName": "Gadgets",
-      "parentCategoryId": "men_gadgets"
-    },
+    // {
+    //   "name": "Men Speakers",
+    //   "categoryId": "men_speakers",
+    //   "parentCategoryName": "Gadgets",
+    //   "parentCategoryId": "men_gadgets"
+    // },
     {
       "name": "Men Wallets",
       "categoryId": "men_wallets",
@@ -267,18 +267,18 @@ export const menLevelThree=[
       "parentCategoryName": "Fashion Accessories",
       "parentCategoryId": "men_fashion_accessories"
     },
-    {
-      "name": "Men Deodorants",
-      "categoryId": "men_deodorants",
-      "parentCategoryName": "Fashion Accessories",
-      "parentCategoryId": "men_fashion_accessories"
-    },
-    {
-      "name": "Men Ties, Cufflinks & Pocket Squares",
-      "categoryId": "men_ties_cufflinks_and_pocket_squares",
-      "parentCategoryName": "Fashion Accessories",
-      "parentCategoryId": "men_fashion_accessories"
-    },
+    // {
+    //   "name": "Men Deodorants",
+    //   "categoryId": "men_deodorants",
+    //   "parentCategoryName": "Fashion Accessories",
+    //   "parentCategoryId": "men_fashion_accessories"
+    // },
+    // {
+    //   "name": "Men Ties, Cufflinks & Pocket Squares",
+    //   "categoryId": "men_ties_cufflinks_and_pocket_squares",
+    //   "parentCategoryName": "Fashion Accessories",
+    //   "parentCategoryId": "men_fashion_accessories"
+    // },
     {
       "name": "Men Accessory Gift Sets",
       "categoryId": "men_accessory_gift_sets",
@@ -291,30 +291,30 @@ export const menLevelThree=[
       "parentCategoryName": "Fashion Accessories",
       "parentCategoryId": "men_fashion_accessories"
     },
-    {
-      "name": "Men Mufflers, Scarves & Gloves",
-      "categoryId": "men_mufflers_scarves_and_gloves",
-      "parentCategoryName": "Fashion Accessories",
-      "parentCategoryId": "men_fashion_accessories"
-    },
-    {
-      "name": "Men Phone Cases",
-      "categoryId": "men_phone_cases",
-      "parentCategoryName": "Fashion Accessories",
-      "parentCategoryId": "men_fashion_accessories"
-    },
+    // {
+    //   "name": "Men Mufflers, Scarves & Gloves",
+    //   "categoryId": "men_mufflers_scarves_and_gloves",
+    //   "parentCategoryName": "Fashion Accessories",
+    //   "parentCategoryId": "men_fashion_accessories"
+    // },
+    // {
+    //   "name": "Men Phone Cases",
+    //   "categoryId": "men_phone_cases",
+    //   "parentCategoryName": "Fashion Accessories",
+    //   "parentCategoryId": "men_fashion_accessories"
+    // },
     {
       "name": "Men Rings & Wristwear",
       "categoryId": "men_rings_and_wristwear",
       "parentCategoryName": "Fashion Accessories",
       "parentCategoryId": "men_fashion_accessories"
     },
-    {
-      "name": "Men Helmets",
-      "categoryId": "men_helmets",
-      "parentCategoryName": "Fashion Accessories",
-      "parentCategoryId": "men_fashion_accessories"
-    },
+    // {
+    //   "name": "Men Helmets",
+    //   "categoryId": "men_helmets",
+    //   "parentCategoryName": "Fashion Accessories",
+    //   "parentCategoryId": "men_fashion_accessories"
+    // },
     {
       "name": "Men Bags & Backpacks",
       "categoryId": "men_bags_and_backpacks",

@@ -11,6 +11,7 @@ import CategorySheet from "./CategorySheet";
 import DrawerList from "./DrawerList";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../Redux Toolkit/Store";
+import { teal } from "@mui/material/colors";
 
 const Navbar = () => {
   const [showSheet, setShowSheet] = useState(false);
@@ -91,9 +92,11 @@ const Navbar = () => {
           {(user.user || sellers.profile) ? (
             <Button onClick={handleProfileClick} className="flex items-center gap-2">
               <Avatar
-                sx={{ width: 29, height: 29 }}
-                src={user.user?.imageUrl || sellers.profile?.imageUrl || "https://cdn.pixabay.com/photo/2015/04/15/09/28/head-723540_640.jpg"}
-              />
+  sx={{ width: 29, height: 29 }}
+  src={user.user?.imageUrl || sellers.profile?.imageUrl}
+>
+  {!user.user?.imageUrl && !sellers.profile?.imageUrl && <AccountCircleIcon sx={{ fontSize: 29, color: teal[500] }} />}
+</Avatar>
               <h1 className="font-semibold hidden lg:block">
                 {user.user?.fullName?.split(" ")[0] || sellers.profile?.sellerName?.split(" ")[0] || "User"}
               </h1>

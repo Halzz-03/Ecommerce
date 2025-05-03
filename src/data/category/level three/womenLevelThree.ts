@@ -64,7 +64,7 @@ export const womenLevelThree = [
         "level":3
     },
     {
-        "name": "Women Belts, Scarves & More",
+        "name": "Women Belts, Scarves",
         "categoryId": "women_belts_scarves_more",
         "parentCategoryName": "Indian & Fusion Wear",
         "parentCategoryId": "women_indian_and_fusion_wear",
@@ -120,27 +120,27 @@ export const womenLevelThree = [
         "parentCategoryId": "women_western_wear",
         "level":3
     },
-    {
-        "name": "Women Co-ords",
-        "categoryId": "women_coords",
-        "parentCategoryName": "Western Wear",
-        "parentCategoryId": "women_western_wear",
-        "level":3
-    },
-    {
-        "name": "Women Playsuits",
-        "categoryId": "women_playsuits",
-        "parentCategoryName": "Western Wear",
-        "parentCategoryId": "women_western_wear",
-        "level":3
-    },
-    {
-        "name": "Women Jumpsuits",
-        "categoryId": "women_jumpsuits",
-        "parentCategoryName": "Western Wear",
-        "parentCategoryId": "women_western_wear",
-        "level":3
-    },
+    // {
+    //     "name": "Women Co-ords",
+    //     "categoryId": "women_coords",
+    //     "parentCategoryName": "Western Wear",
+    //     "parentCategoryId": "women_western_wear",
+    //     "level":3
+    // },
+    // {
+    //     "name": "Women Playsuits",
+    //     "categoryId": "women_playsuits",
+    //     "parentCategoryName": "Western Wear",
+    //     "parentCategoryId": "women_western_wear",
+    //     "level":3
+    // },
+    // {
+    //     "name": "Women Jumpsuits",
+    //     "categoryId": "women_jumpsuits",
+    //     "parentCategoryName": "Western Wear",
+    //     "parentCategoryId": "women_western_wear",
+    //     "level":3
+    // },
   
     {
         "name": "Women Sweaters & Sweatshirts",
@@ -156,13 +156,13 @@ export const womenLevelThree = [
         "parentCategoryId": "women_western_wear",
         "level":3
     },
-    {
-        "name": "Women Blazers & Waistcoats",
-        "categoryId": "women_blazers_waistcoats",
-        "parentCategoryName": "Western Wear",
-        "parentCategoryId": "women_western_wear",
-        "level":3
-    },
+    // {
+    //     "name": "Women Blazers & Waistcoats",
+    //     "categoryId": "women_blazers_waistcoats",
+    //     "parentCategoryName": "Western Wear",
+    //     "parentCategoryId": "women_western_wear",
+    //     "level":3
+    // },
     
    
     {
@@ -208,7 +208,7 @@ export const womenLevelThree = [
         "level":3
     },
     {
-        "name": "Women Sports Shoes & Floaters",
+        "name": "Women Sports Shoes",
         "categoryId": "women_sports_shoes_floaters",
         "parentCategoryName": "Footwear",
         "parentCategoryId": "women_footwear",
@@ -259,13 +259,13 @@ export const womenLevelThree = [
     },
    
    
-    {
-        "name": "Women Sleepwear & Loungewear",
-        "categoryId": "women_sleepwear_loungewear",
-        "parentCategoryName": "Lingerie & Sleepwear",
-        "parentCategoryId": "women_lingerie_sleepwear",
-        "level":3
-    },
+    // {
+    //     "name": "Women Sleepwear & Loungewear",
+    //     "categoryId": "women_sleepwear_loungewear",
+    //     "parentCategoryName": "Lingerie & Sleepwear",
+    //     "parentCategoryId": "women_lingerie_sleepwear",
+    //     "level":3
+    // },
     {
         "name": "Women Swimwear",
         "categoryId": "women_swimwear",
@@ -281,13 +281,13 @@ export const womenLevelThree = [
         "parentCategoryId": "women_beauty_personal_care",
         "level":3
     },
-    {
-        "name": "Women Makeup",
-        "categoryId": "women_makeup",
-        "parentCategoryName": "Beauty & Personal Care",
-        "parentCategoryId": "women_beauty_personal_care",
-        "level":3
-    },
+    // {
+    //     "name": "Women Makeup",
+    //     "categoryId": "women_makeup",
+    //     "parentCategoryName": "Beauty & Personal Care",
+    //     "parentCategoryId": "women_beauty_personal_care",
+    //     "level":3
+    // },
     {
         "name": "Women Skincare",
         "categoryId": "women_skincare",
@@ -310,13 +310,13 @@ export const womenLevelThree = [
         "parentCategoryId": "women_beauty_personal_care",
         "level":3
     },
-    {
-        "name": "Women Gadgets",
-        "categoryId": "women_gadgets",
-        "parentCategoryName": "Gadgets",
-        "parentCategoryId": "women_gadgets",
-        "level":3
-    },
+    // {
+    //     "name": "Women Gadgets",
+    //     "categoryId": "women_gadgets",
+    //     "parentCategoryName": "Gadgets",
+    //     "parentCategoryId": "women_gadgets",
+    //     "level":3
+    // },
     {
         "name": "Women Smart Wearables",
         "categoryId": "women_smart_wearables",
@@ -338,13 +338,13 @@ export const womenLevelThree = [
         "parentCategoryId": "women_gadgets",
         "level":3
     },
-    {
-        "name": "Women Speakers",
-        "categoryId": "women_speakers",
-        "parentCategoryName": "Gadgets",
-        "parentCategoryId": "women_gadgets",
-        "level":3
-    },
+    // {
+    //     "name": "Women Speakers",
+    //     "categoryId": "women_speakers",
+    //     "parentCategoryName": "Gadgets",
+    //     "parentCategoryId": "women_gadgets",
+    //     "level":3
+    // },
     {
         "name": "Women Jewellery",
         "categoryId": "women_jewellery",
@@ -352,20 +352,20 @@ export const womenLevelThree = [
         "parentCategoryId": "women_jewellery",
         "level":3
     },
-    {
-        "name": "Women Fashion Jewellery",
-        "categoryId": "women_fashion_jewellery",
-        "parentCategoryName": "Jewellery",
-        "parentCategoryId": "women_jewellery",
-        "level":3
-    },
-    {
-        "name": "Women Fine Jewellery",
-        "categoryId": "women_fine_jewellery",
-        "parentCategoryName": "Jewellery",
-        "parentCategoryId": "women_jewellery",
-        "level":3
-    },
+    // {
+    //     "name": "Women Fashion Jewellery",
+    //     "categoryId": "women_fashion_jewellery",
+    //     "parentCategoryName": "Jewellery",
+    //     "parentCategoryId": "women_jewellery",
+    //     "level":3
+    // },
+    // {
+    //     "name": "Women Fine Jewellery",
+    //     "categoryId": "women_fine_jewellery",
+    //     "parentCategoryName": "Jewellery",
+    //     "parentCategoryId": "women_jewellery",
+    //     "level":3
+    // },
     {
         "name": "Women Earrings",
         "categoryId": "women_earrings",

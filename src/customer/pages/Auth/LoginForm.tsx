@@ -82,6 +82,7 @@ const LoginForm = () => {
 
     return (
         <div>
+            {/* <img src="CARITFY.png" alt="logo" /> */}
             <h1 className='text-center font-bold text-xl text-primary-color pb-8'>Login</h1>
             <form className="space-y-5">
 

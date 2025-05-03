@@ -1,26 +1,24 @@
 import React, { useState, useEffect, MouseEvent } from "react";
-import "./ProductCard.css";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import ModeCommentIcon from '@mui/icons-material/ModeComment';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { teal } from "@mui/material/colors";
-import { Box, Button, IconButton, Modal } from "@mui/material";
-import { useNavigate, useParams } from "react-router-dom";
+import { Box, Button, Modal, Chip, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { Product } from "../../../../types/productTypes";
 import {
     useAppDispatch,
     useAppSelector,
 } from "../../../../Redux Toolkit/Store";
-import { fetchProductById } from "../../../../Redux Toolkit/Customer/ProductSlice";
 import { addProductToWishlist } from "../../../../Redux Toolkit/Customer/WishlistSlice";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { isWishlisted } from "../../../../util/isWishlisted";
-import ModeCommentIcon from '@mui/icons-material/ModeComment';
 import ChatBot from "../../ChatBot/ChatBot";
 
 interface ProductCardProps {
-    // images: string[];
-    // categoryId: string | undefined;
     item: Product;
 }
+
 const style = {
     position: 'absolute' as 'absolute',
     top: '50%',
@@ -29,17 +27,16 @@ const style = {
     width: "auto",
     borderRadius: ".5rem",
     boxShadow: 24,
-
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({ item }) => {
     const [currentImage, setCurrentImage] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
     const [isFavorite, setIsFavorite] = useState(false);
+    const [showChatBot, setShowChatBot] = useState(false);
     const { wishlist } = useAppSelector((store) => store);
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
-    const [showChatBot, setShowChatBot] = useState(false)
 
     const handleAddWishlist = (event: MouseEvent) => {
         event.stopPropagation();
@@ -47,26 +44,25 @@ const ProductCard: React.FC<ProductCardProps> = ({ item }) => {
         if (item.id) dispatch(addProductToWishlist({ productId: item.id }));
     };
 
+    const handleShowChatBot = (event: MouseEvent) => {
+        event.stopPropagation();
+        setShowChatBot(true);
+    };
+
+    const handleCloseChatBot = (e: MouseEvent) => {
+        e.stopPropagation();
+        setShowChatBot(false);
+    };
+
     useEffect(() => {
         let interval: any;
         if (isHovered) {
             interval = setInterval(() => {
                 setCurrentImage((prevImage) => (prevImage + 1) % item.images.length);
-            }, 1000); // Change image every 1 second
-        } else if (interval) {
-            clearInterval(interval);
+            }, 1500); // Changed to 1.5 seconds for better viewing
         }
         return () => clearInterval(interval);
     }, [isHovered, item.images.length]);
-
-    const handleShowChatBot = (event: MouseEvent) => {
-        event.stopPropagation();
-        setShowChatBot(true)
-    }
-    const handleCloseChatBot = (e: MouseEvent) => {
-        e.stopPropagation();
-        setShowChatBot(false)
-    }
 
     return (
         <>
@@ -76,98 +72,218 @@ const ProductCard: React.FC<ProductCardProps> = ({ item }) => {
                         `/product-details/${item.category?.categoryId}/${item.title}/${item.id}`
                     )
                 }
-                className="group px-4 relative"
+                className="group relative"
             >
                 <div
-                    className="card "
+                    className="relative w-full h-64 overflow-hidden rounded-lg shadow-md transition-all duration-300 ease-in-out bg-white hover:shadow-xl"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 >
-                    {item.images.map((image: any, index: number) => (
-                        <img
-                            key={index}
-                            className="card-media object-top"
-                            src={image}
-                            alt={`product-${index}`}
-                            style={{
-                                transform: `translateX(${(index - currentImage) * 100}%)`,
-                            }}
-                        />
-                    ))}
-                    {isHovered && (
-                        <div className="indicator flex flex-col items-center space-y-2">
-                            <div className="flex gap-4">
-                                {item.images.map((item: any, index: number) => (
-                                    <button
-                                        key={index}
-                                        className={`indicator-button ${index === currentImage ? "active" : ""
-                                            }`}
-                                        onClick={() => setCurrentImage(index)}
-                                    />
-                                ))}
-                            </div>
-
-                            <div className="flex gap-3">
-                                {wishlist.wishlist && (
-                                    <Button
-                                        variant="contained"
-                                        color="secondary"
-
-                                        sx={{ zIndex: 10 }}
-                                        className=" z-50"
-                                        onClick={handleAddWishlist}
-                                    >
-                                        {isWishlisted(wishlist.wishlist, item) ? (
-                                            <FavoriteIcon sx={{ color: teal[500] }} />
-                                        ) : (
-                                            <FavoriteBorderIcon sx={{ color: "gray" }} />
-                                        )}
-                                    </Button>
-                                )}
-                                <Button onClick={handleShowChatBot} color="secondary" variant="contained">
-                                    <ModeCommentIcon sx={{ color: teal[500] }} />
-                                </Button>
-                            </div>
-
-
+                    {/* Discount badge */}
+                    {/* {(item.discountPercent ?? 0) > 0 && (
+                        <div className="absolute top-3 left-3 z-10">
+                            <Chip 
+                                label={`${item.discountPercent}% OFF`} 
+                                sx={{ 
+                                    backgroundColor: teal[500],
+                                    color: 'white',
+                                    fontWeight: 'bold',
+                                    fontSize: '0.75rem'
+                                }}
+                                size="small"
+                            />
                         </div>
-                    )}
-                </div>
-                <div className="details pt-3 space-y-1 group-hover-effect  rounded-md ">
-                    <div className="name space-y ">
-                        <h1 className="font-semibold text-lg">
-                            {item.seller?.businessDetails.businessName}
-                        </h1>
-                        <p className="">{item.title}</p>
+                    )} */}
+
+                    {/* Images container */}
+                    <div className="relative w-full h-full">
+                        {item.images.map((image: any, index: number) => (
+                            <img
+                                key={index}
+                                className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500"
+                                src={image}
+                                alt={`${item.title}-${index}`}
+                                style={{
+                                    transform: `translateX(${(index - currentImage) * 100}%)`,
+                                }}
+                            />
+                        ))}
                     </div>
-                    <div className="price flex items-center gap-3 ">
-                        <span className="font-semibold text-gray-800">
-                            {" "}
-                            ₹{item.sellingPrice}
-                        </span>
-                        <span className="text thin-line-through text-gray-400 ">
-                            ₹{item.mrpPrice}
-                        </span>
-                        <span className="text-[#00927c] font-semibold">
-                            {item.discountPercent}% off
-                        </span>
+
+                    {/* Hover overlay with actions */}
+                    <div 
+                        className={`absolute inset-0 bg-black bg-opacity-20 flex flex-col items-center justify-end p-4 transition-opacity duration-300 ${
+                            isHovered ? 'opacity-100' : 'opacity-0'
+                        }`}
+                    >
+                        {/* Image indicators */}
+                        <div className="flex justify-center gap-2 mb-4">
+                            {item.images.map((_, index: number) => (
+                                <button
+                                    key={index}
+                                    className={`w-2 h-2 rounded-full transition-all ${
+                                        index === currentImage 
+                                            ? 'bg-teal-500 w-4' 
+                                            : 'bg-white bg-opacity-60'
+                                    }`}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setCurrentImage(index);
+                                    }}
+                                />
+                            ))}
+                        </div>
+
+                        {/* Action buttons */}
+                        <div className="flex w-full justify-center gap-3 mb-2">
+                            <Button
+                                variant="contained"
+                                size="small"
+                                onClick={handleAddWishlist}
+                                sx={{
+                                    backgroundColor: 'white',
+                                    color: teal[500],
+                                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                                    '&:hover': {
+                                        backgroundColor: teal[50],
+                                    },
+                                    minWidth: '36px',
+                                    width: '36px',
+                                    height: '36px',
+                                    borderRadius: '18px',
+                                    padding: 0
+                                }}
+                            >
+                                {wishlist.wishlist && isWishlisted(wishlist.wishlist, item) ? (
+                                    <FavoriteIcon sx={{ color: teal[500], fontSize: '1.25rem' }} />
+                                ) : (
+                                    <FavoriteBorderIcon sx={{ color: teal[500], fontSize: '1.25rem' }} />
+                                )}
+                            </Button>
+
+                            {/* <Button
+                                variant="contained"
+                                size="small"
+                                onClick={handleShowChatBot}
+                                sx={{
+                                    backgroundColor: 'white',
+                                    color: teal[500],
+                                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                                    '&:hover': {
+                                        backgroundColor: teal[50],
+                                    },
+                                    minWidth: '36px',
+                                    width: '36px',
+                                    height: '36px',
+                                    borderRadius: '18px',
+                                    padding: 0
+                                }}
+                            >
+                                <ModeCommentIcon sx={{ color: teal[500], fontSize: '1.25rem' }} />
+                            </Button> */}
+
+                            <Button
+                                variant="contained"
+                                size="small"
+                                sx={{
+                                    backgroundColor: teal[500],
+                                    color: 'white',
+                                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                                    '&:hover': {
+                                        backgroundColor: teal[600],
+                                    },
+                                    minWidth: '36px',
+                                    width: '36px',
+                                    height: '36px',
+                                    borderRadius: '18px',
+                                    padding: 0
+                                }}
+                            >
+                                <ShoppingCartIcon sx={{ fontSize: '1.25rem' }} />
+                            </Button>
+                        </div>
                     </div>
                 </div>
 
+                {/* Product details */}
+                <div className="pt-3 px-2">
+                    {/* Seller name */}
+                    <Typography 
+                        variant="subtitle2" 
+                        sx={{ 
+                            color: teal[700],
+                            fontWeight: 600,
+                            fontSize: '0.875rem'
+                        }}
+                    >
+                        {item.seller?.businessDetails.businessName}
+                    </Typography>
+                    
+                    {/* Product title */}
+                    <Typography 
+                        variant="body2" 
+                        sx={{ 
+                            color: '#333',
+                            fontWeight: 500,
+                            marginY: '4px',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            display: '-webkit-box',
+                            WebkitLineClamp: 1,
+                            WebkitBoxOrient: 'vertical',
+                        }}
+                    >
+                        {item.title}
+                    </Typography>
+                    
+                    {/* Price information */}
+                    <div className="flex items-center gap-2 mt-1">
+                        <Typography 
+                            variant="body1" 
+                            sx={{ 
+                                fontWeight: 700,
+                                color: '#1a1a1a',
+                            }}
+                        >
+                            ₹{item.sellingPrice}
+                        </Typography>
+                        
+                        <Typography 
+                            variant="body2" 
+                            sx={{ 
+                                textDecoration: 'line-through',
+                                color: '#888',
+                            }}
+                        >
+                            ₹{item.mrpPrice}
+                        </Typography>
+
+                        <Typography 
+                            variant="body2" 
+                            sx={{ 
+                                color: teal[500],
+                                fontWeight: 600,
+                            }}
+                        >
+                            {item.discountPercent}% off
+                        </Typography>
+                    </div>
+                </div>
             </div>
-            {showChatBot && <section className="absolute left-16 top-0">
+
+            {/* ChatBot Modal */}
+            {showChatBot && (
                 <Modal
                     open={true}
                     onClose={handleCloseChatBot}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
+                    aria-labelledby="chat-modal"
+                    aria-describedby="chat-with-product-assistant"
                 >
                     <Box sx={style}>
                         <ChatBot handleClose={handleCloseChatBot} productId={item.id} />
                     </Box>
                 </Modal>
-
-            </section>}
+            )}
         </>
     );
 };

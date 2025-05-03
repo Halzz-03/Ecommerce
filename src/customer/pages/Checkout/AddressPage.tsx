@@ -91,7 +91,7 @@ const AddressPage = () => {
                 </div>
                 <div className="col-span-1 text-sm space-y-3 ">
                     <section className='space-y-3 border p-5 rounded-md'>
-                        <h1 className='text-primary-color font-medium pb-2 text-center'>Chose Payment Gatway</h1>
+                        <h1 className='text-primary-color font-medium pb-2 text-center'>Chose Payment Gateway</h1>
 
                         <RadioGroup
                             row

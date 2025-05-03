@@ -22,7 +22,7 @@ const Auth = () => {
             <div className='max-w-md w-full rounded-md border shadow-lg'>
                 <img
                     className='w-full rounded-t-md h-36 object-cover'
-                    src="/CARTIFY.png"
+                    src="CARTIFY.png"
                     alt="Logo"
                 />
                 <div className='px-10 py-8'>

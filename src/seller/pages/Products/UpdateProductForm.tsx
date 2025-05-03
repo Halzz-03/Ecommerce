@@ -388,11 +388,11 @@ const UpdateProductForm = () => {
             >
                 <Alert
                     onClose={handleCloseSnackbar}
-                    severity={sellerProduct.error ? "error" : "success"}
+                    severity={snackbarSeverity}
                     variant="filled"
                     sx={{ width: '100%' }}
                 >
-                    {sellerProduct.error ? sellerProduct.error : "Product created successfully"}
+                    {snackbarMessage}
                 </Alert>
             </Snackbar>
         </div>
